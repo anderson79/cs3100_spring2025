@@ -3,6 +3,8 @@ project(lists)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(lists main.cpp
+add_executable(linkedListTests linkedListTests.cpp
         SinglyLinkedList.cpp
-        SinglyLinkedList.h)
+        SinglyLinkedList.h
+        )
+
