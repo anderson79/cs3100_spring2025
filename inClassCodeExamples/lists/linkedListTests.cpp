@@ -1,3 +1,7 @@
+/**
+ * linkedListTests.cpp
+ * demo and testing for SinglyLinkedList
+ */
 #include "SinglyLinkedList.h"   // you should only ever #include a .h file
                                 // if your code doesn't work when you include the .h
                                 // you likely have your C++ environment set up incorrectly
@@ -5,7 +9,17 @@
 
 using namespace std;
 
+void foo() {
+    SinglyLinkedNode n("james");
+    n.next = new SinglyLinkedNode("tom");
+    cout << n.data;
+    delete n.next;
+}
+
 int main() {
+    int i = 7;
+    foo();
+
     // Create a variable of type SinglyLinkedNode
     // In this case, node is an actual SinglyLinkedNode object
     // and not a reference/pointer to an object
@@ -22,5 +36,15 @@ int main() {
     // and are local variables for the main function
     SinglyLinkedList list;
 
+    SinglyLinkedNode* myNode = new SinglyLinkedNode("myNode");
+    list.appendNode(myNode);
+
+    SinglyLinkedNode* myNode2 = new SinglyLinkedNode("myNode2");
+    list.appendNode(myNode2);
+
+    myNode2 = new SinglyLinkedNode("myNode3");
+    list.appendNode(myNode2);
+
+    list.append("james");
     return 0;
 }

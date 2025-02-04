@@ -45,6 +45,14 @@ public:
     // the definition for it is in SinglyLinkedList.cpp
     SinglyLinkedList();
 
+    // append adds the item to the end of the list
+    void append(string item);
+    // appendNode adds the node to the end of the list
+    // for the List ADT, there is no concept of a node
+    // ideally this could be private, but for our example
+    void appendNode(SinglyLinkedNode* node);
+
+    bool search(string item);
 
 }; //remember semicolon
 
