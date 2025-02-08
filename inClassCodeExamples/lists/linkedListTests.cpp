@@ -16,6 +16,14 @@ void foo() {
     delete n.next;
 }
 
+void copyList(SinglyLinkedList list) {
+    list.append("appened in copyList");
+}
+
+void refList(SinglyLinkedList& list) {
+    list.append("appended in refList");
+}
+
 int main() {
     int i = 7;
     foo();
@@ -46,5 +54,9 @@ int main() {
     list.appendNode(myNode2);
 
     list.append("james");
+
+    for (int i = 0; i < 100000; i++) {
+        copyList(list);
+    }
     return 0;
 }

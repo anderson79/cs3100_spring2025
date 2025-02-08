@@ -18,6 +18,33 @@ SinglyLinkedList::SinglyLinkedList() {
     tail = nullptr;
 }
 
+SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList& other) {
+    this->head = nullptr;
+    this->tail = nullptr;
+
+    SinglyLinkedNode* current = other.head;
+    while (current != nullptr) {
+        append(current->data);
+        current = current->next;
+    }
+}
+
+// destructor
+// without this we had a memory leak
+SinglyLinkedList::~SinglyLinkedList() {
+    SinglyLinkedNode* current = head;
+    while (current != nullptr) {
+        SinglyLinkedNode* killMeNext = current->next;
+        delete current; // release memory
+        current = killMeNext;
+    }
+}
+
+void SinglyLinkedList::append(string item) {
+    SinglyLinkedNode* newNode = new SinglyLinkedNode(item);
+    appendNode(newNode);
+}
+
 void SinglyLinkedList::appendNode(SinglyLinkedNode* node) {
     // list is empty
     if (head == nullptr) {

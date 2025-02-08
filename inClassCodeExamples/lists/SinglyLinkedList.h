@@ -45,6 +45,12 @@ public:
     // the definition for it is in SinglyLinkedList.cpp
     SinglyLinkedList();
 
+    // copy constructor
+    SinglyLinkedList(const SinglyLinkedList& other);
+
+    // destructor
+    ~SinglyLinkedList();
+
     // append adds the item to the end of the list
     void append(string item);
     // appendNode adds the node to the end of the list
