@@ -1,6 +1,9 @@
-//
-// Created by drink on 2/5/2025.
-//
+/**
+ * ArrayList.h
+ * This is the header file for ArrayList
+ * ArrayList is a list/dynamic array
+ *
+ */
 
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
@@ -12,15 +15,21 @@ using namespace std;
 
 class ArrayList {
     public:
-    string* dataArray; // I renamed this from theArray
+
     static constexpr size_t INITIAL_ALLOCATED_SIZE = 4;
+
+    string* dataArray; // I renamed this from theArray
     size_t listLength;
     size_t allocatedSize;
 
     // "empty" constructor
+    // you can pass in a desired initial capacity, or else
+    // it will be set to the default INITIAL_ALLOCATED_SIZE
     ArrayList(size_t initialSize = INITIAL_ALLOCATED_SIZE);
+
     // destructor
     ~ArrayList();
+
     // copy constructor
     ArrayList(const ArrayList& other);
 
@@ -34,12 +43,14 @@ class ArrayList {
     string* copyArray(size_t newSize, const string* copyFrom) const;
 
     // accessor methods
-    // operator[] returns a reference to the string, it is modifiable
-    string& operator[](size_t index);
     // at returns optional<string>, if index is out of bounds returns nullopt
     optional<string> at(size_t index) const;
+    // operator[] returns a reference to the string, it is modifiable
+    string& operator[](size_t index) const;
+
 };
 
+// overload for << so we can output to cout nicely
 ostream& operator<<(ostream& os, const ArrayList& arrayList);
 
 

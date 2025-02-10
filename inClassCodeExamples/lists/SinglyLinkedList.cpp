@@ -6,6 +6,10 @@
 
 #include "SinglyLinkedList.h"
 
+#include <iostream>
+
+#include "ArrayList.h"
+
 // definition of SinglyLinkedList default constructor
 // head and tail aren't guaranteed to be null when
 // I create a list, so I want to make sure they will be
@@ -75,5 +79,22 @@ bool SinglyLinkedList::search(string item) {
     // if we look through the entire list and didn't
     // return true above, we didn't find the item
     return false;
+}
+
+string SinglyLinkedList::toString() const {
+    SinglyLinkedNode* current = head;
+    string result = "";
+    while (current != nullptr) {
+        result += current->data;
+        if (current->next != nullptr) {
+            result += ", ";
+        }
+    }
+    return result;
+}
+
+ostream& operator<<(ostream& os, const SinglyLinkedList& list) {
+    os << list.toString();
+    return os;
 }
 

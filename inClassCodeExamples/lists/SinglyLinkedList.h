@@ -1,10 +1,13 @@
-//
-// SinglyLinkedList.h
-// This is the header file for our SinglyLinkedList
-// It contains the declaration for both SinglyLinkedNode
-// and SinglyLinkedList
-// You will #include "SinglyLinkedList.h" to use it
-//
+/**
+*
+* SinglyLinkedList.h
+* This is the header file for our SinglyLinkedList
+* It contains the declaration for both SinglyLinkedNode
+* and SinglyLinkedList
+* You will #include "SinglyLinkedList.h" to use it
+*
+*/
+
 
 // CLion will automatically generate these for you
 // your code goes in between this and the #endif at the bottom of the file
@@ -60,6 +63,11 @@ public:
 
     bool search(string item);
 
+    // helper method so we can get a string of the whole list
+    string toString() const;
 }; //remember semicolon
+
+// overload of << so we can output to cout
+ostream& operator<<(ostream& os, const SinglyLinkedList& list);
 
 #endif //SINGLYLINKEDLIST_H
