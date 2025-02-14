@@ -316,7 +316,7 @@ int main(int argc, char* argv[]) {
                 OUTSTREAM << "*** contains() returned false for <" << i << ", " << i << "> *** " << __LINE__ << endl;
             }
         }
-        if (anyErrors) {
+        if (!anyErrors) {
             OUTSTREAM << "CORRECT: Contains returned true" << endl << endl;
         } else {
             OUTSTREAM << "ERROR: Contains returned false *** " << __LINE__ << endl << endl;
