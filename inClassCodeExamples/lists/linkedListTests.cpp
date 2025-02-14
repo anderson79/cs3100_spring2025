@@ -12,7 +12,7 @@ using namespace std;
 void foo() {
     SinglyLinkedNode n("james");
     n.next = new SinglyLinkedNode("tom");
-    cout << n.data;
+    cout << n.data << endl;
     delete n.next;
 }
 
@@ -58,5 +58,14 @@ int main() {
     for (int i = 0; i < 100000; i++) {
         copyList(list);
     }
+
+    string itemToFind = "myNode2";
+    SinglyLinkedNode* searchedNode = list.searchNode(itemToFind);
+    if (searchedNode == nullptr) {
+        cout << "No node with " << itemToFind << endl;
+    } else {
+        cout << "found node: " << searchedNode->data << endl;
+    }
+
     return 0;
 }

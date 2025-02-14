@@ -64,21 +64,25 @@ void SinglyLinkedList::appendNode(SinglyLinkedNode* node) {
 }
 
 bool SinglyLinkedList::search(string item) {
+    return searchNode(item) != nullptr;
+}
+
+SinglyLinkedNode* SinglyLinkedList::searchNode(string item) {
     SinglyLinkedNode* current = head;
     // linked list traversal starts at the head
     // since tail->next is null, we continue
     // until current is null
     while (current != nullptr) {
         if (current->data == item) {
-            // we found it! we can stop and return true
-            return true;
+            // we found it! we can stop and return current pointer
+            return current;
         }
         // advance to the next node
         current = current->next;
     }
     // if we look through the entire list and didn't
-    // return true above, we didn't find the item
-    return false;
+    // return above, we didn't find the item
+    return nullptr;
 }
 
 string SinglyLinkedList::toString() const {

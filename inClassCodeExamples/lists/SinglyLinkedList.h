@@ -20,7 +20,7 @@
 using namespace std; // dont have to say std::
 
 class SinglyLinkedNode {
-public: // everthing after this will be public
+public: // everything after this will be public
     string data;
     SinglyLinkedNode* next;
 
@@ -62,6 +62,7 @@ public:
     void appendNode(SinglyLinkedNode* node);
 
     bool search(string item);
+    SinglyLinkedNode* searchNode(string item);
 
     // helper method so we can get a string of the whole list
     string toString() const;
