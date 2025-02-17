@@ -87,12 +87,13 @@ SinglyLinkedNode* SinglyLinkedList::searchNode(string item) {
 
 string SinglyLinkedList::toString() const {
     SinglyLinkedNode* current = head;
-    string result = "";
+    string result;
     while (current != nullptr) {
         result += current->data;
         if (current->next != nullptr) {
             result += ", ";
         }
+        current = current->next;
     }
     return result;
 }

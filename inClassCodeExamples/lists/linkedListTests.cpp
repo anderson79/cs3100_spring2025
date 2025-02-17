@@ -59,6 +59,8 @@ int main() {
         copyList(list);
     }
 
+    cout << list << endl;
+
     string itemToFind = "myNode2";
     SinglyLinkedNode* searchedNode = list.searchNode(itemToFind);
     if (searchedNode == nullptr) {
