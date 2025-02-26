@@ -63,11 +63,11 @@ void SinglyLinkedList::appendNode(SinglyLinkedNode* node) {
     }
 }
 
-bool SinglyLinkedList::search(string item) {
+bool SinglyLinkedList::search(string item) const {
     return searchNode(item) != nullptr;
 }
 
-SinglyLinkedNode* SinglyLinkedList::searchNode(string item) {
+SinglyLinkedNode* SinglyLinkedList::searchNode(string item) const {
     SinglyLinkedNode* current = head;
     // linked list traversal starts at the head
     // since tail->next is null, we continue

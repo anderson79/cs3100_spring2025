@@ -61,8 +61,9 @@ public:
     // ideally this could be private, but for our example
     void appendNode(SinglyLinkedNode* node);
 
-    bool search(string item);
-    SinglyLinkedNode* searchNode(string item);
+    bool search(string item) const;
+    SinglyLinkedNode* searchNode(string item) const;
+
 
     // helper method so we can get a string of the whole list
     string toString() const;
