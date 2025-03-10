@@ -56,20 +56,22 @@ public:
     bool isEmptySinceStart() const;
 
     bool isEmptyAfterRemoval() const;
+
+    // overloads for operator<< to print buckets using cout
+    friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& me);
+    friend std::ostream& operator<<(std::ostream& os,  std::pair<const HashTableBucket&,  size_t> bucket);
 };
 
-// overloads for operator<< to print buckets using cout
-std::ostream& operator<<(std::ostream& os, const HashTableBucket& me);
-std::ostream& operator<<(std::ostream& os,  std::pair<const HashTableBucket&,  size_t> bucket);
+
 
 class HashTable {
 private:
-
+    int privateInt;
     // TODO: after you decide if you are doing chaining or a probing method
     // you will need to declare any member variables for your hash table
     // you may also want a method for your chosen probe function
 
-
+    auto strHash = std::hash<std::string>{};
 
 
     // if using pseudo-random probing, you will need an offsets array
@@ -107,8 +109,10 @@ public:
     size_t capacity() const;
 
     size_t size() const;
+
+    friend std::ostream& operator<<(std::ostream& os, const HashTable& hashTable);
+
 };
 
-std::ostream& operator<<(std::ostream& os, const HashTable& hashTable);
 
 #endif //HASHTABLE_H

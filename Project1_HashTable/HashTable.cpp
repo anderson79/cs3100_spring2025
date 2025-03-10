@@ -28,6 +28,7 @@ HashTable::HashTable(size_t initCapacity) {
 /// @return if key is in the table, or if the table is full, return false
 /// otherwise return true
 bool HashTable::insert(const string& key, int value) {
+    size_t bucket = strHash(key);
     return {};
 }
 
