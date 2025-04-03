@@ -33,6 +33,32 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList& other) {
     }
 }
 
+void SinglyLinkedList::operator=(const SinglyLinkedList& other) {
+    // first I would need to destroy "this" list
+    // can use same code in destructor
+    // since I use this code in two places I could probably make
+    // a helper method to do this stuff
+    SinglyLinkedNode* current = head;
+    while (current != nullptr) {
+        SinglyLinkedNode* killMeNext = current->next;
+        delete current; // release memory
+        current = killMeNext;
+    }
+
+    // next copy the contents of "other" into "this" list
+    // can use same code as copy constructor
+    // since I use this code in two places I could probably make
+    // a helper method... wait I already said this
+    this->head = nullptr;
+    this->tail = nullptr;
+
+    current = other.head;
+    while (current != nullptr) {
+        append(current->data);
+        current = current->next;
+    }
+}
+
 // destructor
 // without this we had a memory leak
 SinglyLinkedList::~SinglyLinkedList() {

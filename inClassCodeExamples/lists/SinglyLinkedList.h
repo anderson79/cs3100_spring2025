@@ -51,6 +51,9 @@ public:
     // copy constructor
     SinglyLinkedList(const SinglyLinkedList& other);
 
+    // assignment operator
+    void operator=(const SinglyLinkedList& other);
+
     // destructor
     ~SinglyLinkedList();
 
